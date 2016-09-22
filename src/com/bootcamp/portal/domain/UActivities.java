@@ -1,0 +1,32 @@
+package com.bootcamp.portal.domain;
+
+public enum UActivities{
+	LOGGED_IN (0L),
+	LOGGED_OUT (3L),
+	CREATED_CATEGORY (4L),
+	DELETED_CATEGORY (5L),
+	CREATED_LOT (6L),
+	MADE_BID (7L),
+	LEAVED_FEEDBACK (8L),
+	ACCEPTED_REQUEST (9L),
+	DENIED_REQUEST (10L),
+	WON_LOT (11L),
+	PAYED_FOR_LOT (13L),
+	RESETED_PASSWORD (14L),
+	CHANGED_PERSONAL_DATA (15L),
+	NEW_USER_REGISTERED (16L),
+	USER_VERIFIED (17L),
+	SEND_EMAIL (18L),
+	PAYED_A_COMMISSION (19L),
+	PAYED_A_REDEMPTION (20L),
+	RECEIVED_WINNER_EMAIL (21L);
+	
+	private final Long uActId;
+	
+	UActivities(Long uActId){
+		this.uActId = uActId;
+	}
+	public Long getUActId(){
+		return uActId;
+	}
+}

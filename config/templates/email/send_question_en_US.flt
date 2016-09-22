@@ -1,0 +1,13 @@
+<html>
+<meta charset="UTF-8">
+<header></header>
+<body>
+<br />
+<br />
+Hello! User <a href="http://bootcamp-charli:8080/bootcamp/#/user_feedbacks/${senderId}">${senderName}</a> sent you message:
+<br />
+${message}
+<br />
+<a href="http://bootcamp-charli:8080/bootcamp/#/user_feedbacks/${senderId}">${senderName}</a> : ${senderEmail}
+</body>
+</html>

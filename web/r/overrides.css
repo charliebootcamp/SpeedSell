@@ -1,0 +1,632 @@
+body {
+	position: relative;
+}
+
+.navbar .brand small {
+	font-size: 10px;
+	color: #ddd;
+}
+
+.navbar .logo{
+    padding-right: 20px;
+    padding-left: 15px; 
+}
+.navbar img{
+    width : 94px;
+    height: 30px;
+    margin-top: 3px;
+}
+/* validation error messages*/
+#profile .help-inline {
+	display: block;
+	margin-bottom: -12px;
+}
+
+#profile .education-date {
+	height: 14px;
+	margin-top: 3px;
+}
+
+#profile .date-error-message {
+	font-size: 10px;
+	margin-top: -3px;
+	margin-left: -5px;
+	position: absolute;
+}
+/* end validation error messages*/
+
+/* begin datatables */
+div.dataTables_length label {
+	float: left;
+	text-align: left;
+}
+
+div.dataTables_length select {
+	width: 75px;
+}
+
+div.dataTables_filter label {
+	float: right;
+}
+
+div.dataTables_info {
+	padding-top: 8px;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+
+table.table {
+	clear: both;
+	margin-bottom: 6px !important;
+}
+
+table.table thead .sorting,table.table thead .sorting_asc,table.table thead .sorting_desc,table.table thead .sorting_asc_disabled,table.table thead .sorting_desc_disabled
+	{
+	cursor: pointer;
+	*cursor: hand;
+}
+
+table.dataTable th:active {
+	outline: none;
+}
+/* end datatables */
+.input-date {
+	width: 70px;
+}
+
+/* file upload */
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+	float: right;
+	margin-right: 4px;
+}
+
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	border: solid transparent;
+	border-width: 0 0 100px 200px;
+	opacity: 0;
+	filter: alpha(opacity =                               0);
+	-moz-transform: translate(-300px, 0) scale(4);
+	direction: ltr;
+	cursor: pointer;
+}
+
+
+/* Fix for IE 7: */
+*+html .fileinput-button {
+	margin: 1px 0 0 0;
+}
+
+.btn-delete {
+	background-color: hsl(0, 69%, 22%) !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b42121",
+		endColorstr="#5e1111" );
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#b42121),
+		to(#5e1111) );
+	background-image: -moz-linear-gradient(top, #b42121, #5e1111);
+	background-image: -ms-linear-gradient(top, #b42121, #5e1111);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b42121),
+		color-stop(100%, #5e1111) );
+	background-image: -webkit-linear-gradient(top, #b42121, #5e1111);
+	background-image: -o-linear-gradient(top, #b42121, #5e1111);
+	background-image: linear-gradient(#b42121, #5e1111);
+	border-color: #5e1111 #5e1111 hsl(0, 69%, 17%);
+	color: #fff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+	-webkit-font-smoothing: antialiased;
+}
+
+.btn-black {
+	background-color: hsl(0, 0%, 16%) !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",
+		endColorstr="#282828" );
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#5b5b5b),
+		to(#282828) );
+	background-image: -moz-linear-gradient(top, #5b5b5b, #282828);
+	background-image: -ms-linear-gradient(top, #5b5b5b, #282828);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5b5b5b),
+		color-stop(100%, #282828) );
+	background-image: -webkit-linear-gradient(top, #5b5b5b, #282828);
+	background-image: -o-linear-gradient(top, #5b5b5b, #282828);
+	background-image: linear-gradient(#5b5b5b, #282828);
+	border-color: #282828 #282828 hsl(0, 0%, 11%);
+	color: #fff !important;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+	-webkit-font-smoothing: antialiased;
+}
+
+.div-checkbox {
+	position: relative;
+}
+
+//
+.div-checkbox input[type="checkbox"] {
+	top: 6px;
+	position: absolute;
+}
+
+.div-checkbox label {
+	position: absolute;
+	left: 20px;
+	top: 4px;
+}
+
+.select {
+	width: 284px;
+	background-color: white;
+	border: 1px solid #CCC;
+}
+
+.thumbnail {
+	width: 120px;
+}
+
+input.span2,textarea.span2,.uneditable-input.span2 {
+	width: 274px;
+}
+
+.tab-content {
+	overflow: inherit;
+	padding: 0px 0 0;
+}
+
+.container {
+	padding-top: 50px;
+}
+
+.loginform .form {
+	position: absolute;
+	left: 480px;
+	width: 400px;
+}
+
+.loginform .form form {
+	position: relative;
+}
+
+.loginform .text {
+	position: absolute;
+	top: 110px;
+	width: 430px;
+}
+
+.text h1 {
+	font-size: 40px;
+	line-height: 52px;
+	line-height: 46px;
+}
+
+.loginform .form-vertical .control-group {
+	margin-bottom: 3px;
+	color: gray;
+}
+
+.loginform .form-vertical .control-label {
+	font-size: 17px;
+}
+
+.loginform .form-vertical .input-medium {
+	width: 220px;
+}
+
+.form-horizontal .controls {
+	margin-left: 180px;
+	padding-left: 0px;
+}
+
+.form-horizontal :first-child.controls {
+	padding-left: 0px;
+}
+
+.form-horizontal .input-append {
+	zoom: 0;
+}
+
+.datepicker {
+	padding: 0px;
+}
+
+.form-horizontal .checkbox {
+	padding-left: 18px;
+}
+
+.agreement .form-horizontal {
+	width: 800px;
+}
+
+.form-vertical .form-actions {
+	padding: 0px 0px 0px;
+	margin-top: 17px;
+	margin-bottom: 0px;
+	background-color: white;
+	border-top: 0px;
+}
+
+.icon-chevron-right {
+	float: right;
+	margin-top: 2px;
+	margin-right: -6px;
+	opacity: .25;
+}
+
+.header .title {
+	position: fixed;
+	top: 38px;
+	height: 99px;
+	width: 100%;
+	border-bottom: 1px solid #bede98;
+}
+
+.container-fluid .span2 {
+	font-size: 14pt;
+	line-height: 39px;
+	width: auto;
+	font-weight: bold;
+}
+
+.container-fluid .span2 i {
+	position: absolute;
+	right: 22px;
+	top: 12px;
+}
+
+.noitems h4 {
+	color: silver;
+}
+
+.nav {
+	margin-bottom: 0px;
+}
+
+.tab-pane .buttonpanel {
+	background-color: #6C3;
+	height: 40px;
+	padding: 6px 15px;
+}
+
+.buttonpanel h3 {
+	position: relative;;
+	top: -5px;
+	float: left;
+}
+
+.buttonpanel .btn {
+	float: right;
+}
+
+.tab-pane .workpanel {
+	background-color: white;
+	text-align: left;
+	position: absolute;
+}
+
+h3 {
+	line-height: 28px;
+}
+
+.loading {
+	position: relative;
+	width: 100%;
+	height: 100px;
+}
+
+.loading div {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 60px;
+	width: 48px;
+}
+
+form {
+	padding-top: 20px;
+}
+
+.modal {
+	overflow: hidden;
+}
+
+hr {
+	top: -15px;
+	margin-top: 2px;
+	margin-bottom: 7px;
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.fileinput-button {
+	overflow: hidden;
+	float: none;
+	margin-right: 4px;
+}
+
+.close {
+	position: absolute;
+	right: 5px;
+}
+
+.form-horizontal .category {
+	padding: 8px 35px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	position: relative;
+}
+
+.blank {
+	padding: 8px 35px 8px 14px;
+	color: #468847;
+	position: relative;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	min-height:18px;
+}
+
+.tabHeader {
+	min-height: 25px;
+}
+
+.j_new_btn {
+	position: absolute;
+	right: 10px;
+	top: 3px;
+}
+
+.filtering-fields {}
+.filtering-fields .select_brackets{
+	width:56px;
+}
+.filtering-fields .select_logicaloperation{
+	width:80px;
+}
+.filtering-fields .select_operation{
+	width:150px;
+}
+
+.help-inline {
+	color: #b94a48;
+}
+
+td .lastRun {
+	display: inline-block;
+	vertical-align: top;
+	white-space:nowrap;
+	width: 170px;
+	verflow: hidden;
+}
+
+td .lastRun .link {
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+	white-space:nowrap;
+}
+
+.gridDefaultCell {
+	width:100% !important;
+	display:block;
+	overflow: hidden;
+}
+
+h3.title {
+	overflow: hidden;
+	max-width: 940px;
+	word-wrap: break-word;
+}
+
+.grid-pk-link-column {
+	max-width: 300px;
+	max-height: 150px;
+	overflow: hidden;
+	display: block;
+	overflow: hidden;
+	margin: 2px;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+}
+
+.filter-error-container {
+	display: inline-block;
+}
+
+.batchjob-detail-form {
+	position: relative;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.batchjob-detail-form label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+
+.batchjob-detail-form span.value {
+	font-weight: bold;
+	position: absolute;
+	left: 165px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 18px;
+	max-width: 740px;
+	white-space: nowrap;
+}
+
+.batchjob-detail-form span.header {
+	position: absolute;
+	font-weight: bold;
+	left: 165px;
+	vertical-align: top;
+}
+
+.batchjob-detail-form span span {
+	display: inline-block;
+	width: 100px;
+	position: relative;
+	text-align: center;
+}
+
+.dlg-readonly-value {}
+
+.dlg-readonly-value .lbl {
+	display: inline-block;
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 20px;
+	white-space: nowrap;
+}
+
+.dlg-readonly-value .val {
+	display: inline-block;
+	width: 330px;
+	color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 20px;
+	white-space: nowrap;
+}
+
+.grid-readonly-value {
+	width:362px;
+}
+
+.grid-readonly-value .lbl {
+	display: inline-block;
+	width: 130px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 20px;
+	white-space: nowrap;
+}
+
+.grid-readonly-value .val {
+	display: inline-block;
+	width: 230px;
+	color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 20px;
+	white-space: nowrap;
+}
+
+.dlgHeaderText {
+	position: relative;
+	left: 5px;
+	top: -2px;
+	display: inline-block;
+	overflow: hidden;
+	height: 30px;
+	width: 500px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.dataTableResult span {
+	display: inline-block;
+	width: 100px;
+}
+
+.bjStatus.ERROR {
+	color: red;
+}
+
+option:disabled 
+{ 
+	background-color: silver;
+}
+
+#batchJobItemList_processing {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 250px;
+    margin-left: -125px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    padding: 2px 0;	
+}
+
+.ui-toolbar {
+	margin: 0 0 0;
+}
+
+
+input[type="text"], input[type="password"], .ui-autocomplete-input, textarea, .uneditable-input {
+	color: black;
+	font-size: 14px;
+}
+
+.dataTables_info {
+	float: left;
+	padding-bottom: 4px;
+	padding-top: 4px;
+}
+
+.css_right {
+	display:inline-block;
+	position: absolute;
+}
+
+.clearPanel:hover {
+	background-color: yellow;
+}
+
+#grandPerm {
+  cursor:pointer; 
+  color: #0088CC;
+}
+
+#grandPerm:hover {
+  text-decoration:underline;
+  color: #005580; 		
+}
+
+
+body {
+  color: #414042;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  text-rendering: geometricprecision;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+a {
+  color: #256799;
+  text-decoration: none;
+}
+
+.blue {
+  color: #256799;
+}
+

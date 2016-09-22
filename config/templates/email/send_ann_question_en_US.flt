@@ -1,0 +1,13 @@
+<html>
+<meta charset="UTF-8">
+<header></header>
+<body>
+<br />
+<br />
+Hello! User ${senderName} sent you message:
+<br />
+${message}
+<br />
+${senderName} : ${senderEmail}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<header></header>
+<body>
+Dear ${login},<br />
+<br />
+Your email account created on <a href="${systemBaseUrl}">Rinplus</a>.<br /> 
+<br />
+Your credential information:<br />
+	<b>user:</b> ${login}<br />
+	<b>password:</b> ${password}<br />
+
+<br />
+
+Thanks.
+Rin Plus
+</body>
+</html>
+
+

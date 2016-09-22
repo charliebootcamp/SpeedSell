@@ -1,0 +1,556 @@
+
+.view{
+	margin-top: 10px;
+}
+
+.link{
+	color: white;
+}
+
+#browsebtn{
+	width:100%;
+}
+#categories{
+  text-align: center;
+  background: #b10017; /* For browsers that do not support gradients */
+  font-size: 20px;
+  color: white;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#categories .mob-cats{
+	margin-left: 10px;
+}
+.mob-cats a{
+	color:white;
+}
+.mob-subcats{
+	margin-left:20px;
+}
+.vertline{
+	border-right: 1px solid white;
+}
+#categories  h5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#categories .btn{
+  background-color: transparent;
+  font-size: 22px;
+}
+#description{
+	/*min-height: 200px;*/
+}
+.panel-footer .btn-group-vertical{
+	width: 100%;
+	background-color: red;
+}
+
+#register-form .control-label{
+	text-align: left;
+}
+
+#categories ul.dropdown-menu{
+  font-size: 14px;
+}
+
+#confirmDelete{
+	margin: 20%;
+}
+#lotdescription, #comment{
+	resize: none;
+}
+#confirmDelete .yes{
+	margin-left: 40%;
+}
+
+#confirmDelete .nope{
+	margin-right : 40%;
+}
+
+#innerStat{
+  color: black;
+}
+
+#logoimg{
+  margin-left: auto;
+  margin-right: auto;
+}
+#myCarousel{
+  margin-bottom: 5%;
+}
+#myaccount{
+  margin: 20px 0px;
+  min-height: 300px;
+  width: auto;
+}
+#search{
+  text-align: center;
+  background-color: #cc1414;
+	margin-bottom: 10px;
+}
+#searchinput{
+  background-color: white;
+}
+#searchButton{
+
+}
+#selectedFiles img {
+      max-width: 55px;
+      max-height: 55px;
+      float: left;
+      margin-bottom:10px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin: 0px 0px 15px;
+}
+.card-header{
+	background-color: #cc1414;
+	padding: 5px;
+	text-align: center;
+}
+.card-header>a{
+	color: white;
+}
+.card-container {
+	padding: 10px;
+	width: 100%;
+}
+.breadcrumb{
+  display: inline-block;
+}
+.btn-bids{
+    margin-top: 25px;
+}
+.btn-login {
+  background-color: #cc1414;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+}
+
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #b10017;
+}
+.btn-register {
+  background-color: #cc1414;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #b10017;
+}
+.carousel-caption{
+  color: black;
+  margin-left: 20%
+}
+.carouselimg{
+  margin-left: 10%
+}
+.footer{
+  vertical-align: middle;
+}
+.form-horizontal{
+	display: block;
+}
+.form-control{
+
+}
+.lot-link:hover{
+  color: white;
+  text-decoration: none;
+}
+.lot-link{
+  color: white;
+}
+.lotInfo{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width:200px;
+  display: inline-block;
+}
+.lotName{
+	text-align: center;
+}
+.mark{
+  color: green;
+}
+.navbar {
+  border-radius: 0;
+  border: none;
+  background-color: #cc1414;
+  margin-bottom: 0;
+  color: white;
+  min-height: 0;
+}
+.navbar-brand{
+  font-size: 25px;
+  color: white;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.nav-tabs{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.nav-tabs>li>a {
+    border-style: none;
+}
+.nav-tabs>li>a:hover {
+    background: #b10017;
+    color: white;
+}
+.navbar-default .navbar-brand{
+  color: white;
+}
+.navbar-toggle{
+	border: 2px;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+
+.orderimg{
+  height:100px;
+  align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+.panel-footer{
+  text-align: center;
+}
+.panel-login {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 15px 0px;
+}
+#contact{
+	margin: 10px;
+}
+.panel-login>.panel-heading {
+  color: #cc1414;
+  background-color: #fff;
+  border-color: #fff;
+  text-align:center;
+}
+.panel-login>.panel-heading a{
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+  color: #cc1414;
+  font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+}
+
+#createdlots .panel{
+	border-width: 2px;
+}
+#createdlots .panel-success{
+	border-color: #228B22;
+}
+#createdlots .panel-danger{
+	border-color: #FF4500;
+}
+.suc{
+	background-color: 	#228B22;
+	border-style: none;
+}
+
+.dan{
+	background-color: #15a3e5;
+	border-style: none;
+}
+
+.warn{
+	background-color: red;
+	border-style: none;
+}
+#createdlots .panel-success>.panel-heading{
+	background-color: 	#228B22;
+}
+#createdlots .panel-danger>.panel-heading{
+	background-color: 	#FF4500;
+}
+
+#innerStat .panel{
+	border-color: #263238;
+	border-width: 1px;
+}
+#innerStat .panel-success .panel-heading{
+		background-color: 	#90EE90;
+		color: black;
+}
+#innerStat .panel-danger .panel-heading{
+		background-color: 	#DC143C;
+		color: white;
+}
+#innerStat .panel-warning .panel-heading{
+		background-color: 	#FAEBD7;
+		color: black;
+}
+
+.border-bad{
+	border-color: #DC143C;
+	border-width: 2px;
+}
+
+.border-good{
+	border-color: 	#32CD32;
+	border-width: 2px;
+}
+
+.border-dontcare{
+	border-color: #DEB887;
+	border-width: 2px;
+}
+
+.pagination.center,
+.pagination.center ul {
+    float: left;
+    position: relative;
+}
+.pagination.center { left: 50%; }
+.pagination.center ul { left: -50%; }
+.glyphicon-sunglasses{
+	color: black;
+}
+
+.white-glyph{
+	color:white;'
+}
+.tab-pane{
+  margin: 5px;
+  min-height: 300px;
+}
+.tab-content .badge{
+  background-color: orange;
+  font-size: 16px;
+}
+.timeLeft{
+  color: red;
+}
+.lot-container{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.nav-pills{
+  margin-left: 10px;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 10px;
+  padding-bottom: 100px;
+}
+footer{
+  background-color: #455A64;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+}
+nav .badge{
+  background-color: #337ab7;
+  font-size: 12px;
+}
+
+ /*not sorted style from searching.html*/
+  .resultlots{
+    margin-top: 10;
+    margin-bottom: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;;
+    border-radius: 1px;
+  }
+  .resultlots img{
+    min-width: 160px ;
+    height: 160px;
+    max-width: 250px;
+  }
+
+  .subcat{
+    padding-left: 10px;
+    margin: -10px;
+  }
+  .panel-group{
+    margin: 0;
+  }
+  span{
+    font-size: 14px;
+  }
+
+  #from, #to {
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .params>.list-group-item{
+    margin: 10px auto;
+  }
+/*end*/
+.lotimg{
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 100%;
+  width: 100%;
+}
+.img-container {
+  height: 250px;
+}
+.lotsreq{
+  height: 400px;
+}
+.reqimg{
+  height:200px;
+}
+.lotnamelink{
+  color: white;
+}
+.msg-val {
+	color: red;
+}
+.msg-success {
+	color: green;
+}
+a {
+	color: black;
+}
+a:hover{
+	text-decoration: none;
+}
+div.polaroid {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+	margin: 5px;
+}
+.glyphicon-ok-sign{
+	color:white;
+	font-size:200%
+}
+.glyphicon-ban-circle{
+	color:red;
+}
+.home{
+	margin: 10px;
+}
+.small-subcats{
+	margin-top: -5em;
+}
+.mob-index-right{
+	float: right;
+}
+
+#categories-mob{
+	text-align: left;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #cc1414;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #cc1414;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    color: #fff;
+    background-color: #cc1414;
+    border-color: #cc1414;
+}
+
+.label-danger {
+    background-color: #cc1414;
+}
+.nav.nav-tabs{
+	min-width: 325px;
+}
+
+.nav-wrap{
+	width: 100%;
+	overflow: auto;
+}
+
+.footer-but .glyphicon-ok{
+	color:green;
+}
+.footer-but .glyphicon-trash{
+	color:red;
+}
+.footer-but .glyphicon-send{
+	color:orange;
+}
+.footer-but-inside{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+.footer-glyph{
+	font-size: 20px;
+	color: black;
+}
+.panel-footer .glyphicon-pencil{
+	color: blue;
+}
+.panel-footer .glyphicon-envelope{
+	color:  #0059b3;
+}
+.panel-footer .glyphicon-question-sign{
+	color:  #999966;
+}
+.panel-footer .glyphicon-ok-circle{
+	color: green;
+}
+.panel-footer .glyphicon-heart-empty{
+	color: red;
+}

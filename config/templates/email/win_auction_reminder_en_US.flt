@@ -1,0 +1,14 @@
+<html>
+<meta charset="UTF-8">
+<header></header>
+<body>
+<br />
+<br />
+Congratulation! You win a lot <a href="http://bootcamp-charli:8080/bootcamp/#/lot/${lotId}">"${lotName}"</a>. Check your account to pay a lot. You got only 15 minutes to do this, so hurry up!:) 
+
+<br />
+Thank you.
+</body>
+</html>
+
+

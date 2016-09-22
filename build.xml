@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<project name="bootcamp" default="dist" basedir=".">
+
+<!-- 
+# run tests:
+ant test
+
+# build *.war
+ant clean dist
+
+-->
+	<property name="basepackage" value="com.bootcamp.portal" />
+	<property name="jar" value="bootcamp.jar" />
+	<property name="war" value="bootcamp.war" />
+
+	<property name="lib.dir" value="lib" />
+	<property name="src.dir" value="src" />
+	<property name="sql.dir" value="src/db" />
+	<property name="sql.migration.dir" value="src/migration" />
+	<property name="test.dir" value="test" />
+	<property name="resource.dir" value="resources" />
+	<property name="tools.dir" value="tools" />
+	<property name="test.files.dir" value="files" />
+
+	<property name="build.dir" value="build" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+	<property name="build.testclasses.dir" value="${build.dir}/testclasses" />
+	<property name="build.testresults" value="${build.dir}/testresults" />
+	<property name="build.instrumented.dir" value="${build.dir}/instrumented" />
+	<property name="build.instrumented.datafile" value="${build.dir}/cobertura.ser" />
+	<property name="build.coveragereport.dir" value="${build.dir}/coveragereport" />
+
+	<property name="cobertura.dir" value="${lib.dir}/cobertura" />
+
+
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+		<mkdir dir="${build.testclasses.dir}" />
+		<mkdir dir="${build.testresults}" />
+		<mkdir dir="${build.instrumented.dir}" />
+		<mkdir dir="${build.coveragereport.dir}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<path id="libpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+			<include name="test/*.jar" />
+			<include name="jetty/servlet-api-3.0.jar" />
+		</fileset>
+	</path>
+
+	<path id="libpath_testdata">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<path id="afterbuildpath">
+		<path refid="libpath" />
+		<pathelement location="${build.classes.dir}" />
+	</path>
+
+	<path id="cobertura.classpath">
+		<fileset dir="${cobertura.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="test.classpath.noinstrument">
+		<path refid="afterbuildpath" />
+		<pathelement location="${build.testclasses.dir}" />
+		<pathelement location="${build.testclasses.dir}/${test.files.dir}" />
+	</path>
+
+	<path id="test.classpath.instrumented">
+		<pathelement location="${build.instrumented.dir}" />
+		<path refid="afterbuildpath" />
+		<pathelement location="${build.testclasses.dir}" />
+		<path refid="cobertura.classpath" />
+		<pathelement location="${build.testclasses.dir}/${test.files.dir}" />
+	</path>
+
+	<!--<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />-->
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" classpathref="libpath" debug="true" />
+		<copy todir="${build.classes.dir}">
+			<fileset dir="${src.dir}" includes="**/*.xml,**/*.properties,**/*.gif" />
+			<!--<fileset dir="${resource.dir}" includes="**/*.xml,**/*.properties,**/*.vm" />-->
+			<!--<fileset dir="${sql.dir}" includes="**/*.sql" />-->
+		</copy>
+		
+		<javac srcdir="${test.dir}" destdir="${build.testclasses.dir}" classpathref="afterbuildpath" debug="true" />
+		<copy todir="${build.testclasses.dir}">
+			<fileset dir="${test.dir}" includes="**/*.xml,**/*.properties" />
+		</copy>
+	</target>
+
+	<target name="compiletools" depends="clean,compile">
+		<javac destdir="${build.classes.dir}" classpathref="libpath_testdata" debug="true">
+			<src>
+				<pathelement path="${tools.dir}"/>
+				<pathelement path="${test.dir}"/>
+			</src>
+		</javac>
+		<copy todir="${build.classes.dir}">
+			<fileset dir="${tools.dir}" includes="**/*.csv" />
+		</copy>
+	</target>
+
+	<target name="dist" depends="compile">
+		<jar basedir="${build.classes.dir}" destfile="${build.dir}/${jar}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}" />
+			</manifest>
+		</jar>
+		
+		<war destfile="${build.dir}/${war}" basedir="web">
+			<lib dir="lib" includes="*.jar"/>
+                         
+<!--			<exclude name="r/css" />
+			<exclude name="r/twitter-bootstrap/*" />
+			<exclude name="r/js/*.js" />
+			<exclude name="r/*.js" />
+			<exclude name="r/*.css" />
+			<exclude name="r/css/*.css" />
+-->			
+			<classes dir="${build.classes.dir}" />
+<!--			<zipfileset dir="${build.compress.dir}" prefix="r"/>-->
+		</war>
+	</target>
+
+	<target name="test" depends="compile">
+		<antcall target="do-test">
+			<param name="do-test.classpath" value="test.classpath.noinstrument" />
+		</antcall>
+	</target>
+	
+	<target name="instrument" depends="compile">
+		<cobertura-instrument todir="${build.instrumented.dir}" datafile="${build.instrumented.datafile}">
+			<fileset dir="${build.classes.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+		</cobertura-instrument>
+	</target>
+	
+	<target name="copy-test-files">
+		<copy todir="${build.testclasses.dir}/${test.files.dir}">
+			<fileset dir="${test.dir}" includes="**/*.xlsx" />
+			<fileset dir="${test.dir}" includes="**/*.xls" />
+			<fileset dir="${test.dir}" includes="**/*.pdf" />
+		</copy>
+	</target>
+	
+	<target name="do-test" depends="copy-test-files">
+		<junit printsummary="yes" haltonfailure="no" fork="true">
+			<!-- http://www.javacraft.org/2012/07/cobertura-with-jdk7.html -->
+			<jvmarg value="-XX:-UseSplitVerifier" />
+		
+			<!-- next property will be ignored if no cobertura classes in classpath -->
+			<sysproperty key="net.sourceforge.cobertura.datafile" file="${build.instrumented.datafile}" />
+			
+			<!-- property for required native library in testing -->
+			<sysproperty key="java.library.path" value="${lib.dir}/pdf" />
+			
+			<!-- classpath either include cobertura and instrumented classes or not -->
+			<classpath refid="${do-test.classpath}" />
+			
+			<formatter type="xml" />
+			<batchtest fork="yes" todir="${build.testresults}">
+				<fileset dir="${test.dir}" id="id">
+					<exclude name="**/AbstractTestCase.java" />
+					<exclude name="**/TestHelper.java" />
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<mkdir dir="${build.testresults}/html" />
+		<junitreport todir="${build.testresults}/html">
+			<fileset dir="${build.testresults}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${build.testresults}/html" />
+		</junitreport>
+	</target>
+
+	<target name="js.concatenate">
+		<delete dir="${build.compress.dir}" />
+    		<concat destfile="${build.compress.dir}/.js">
+			<filelist dir="web/r" >
+				<file name="js/jquery-1.7.2.min.js" />
+				<file name="js/jquery.validate.min.js" />
+				<file name="js/jquery.dataTables.js" />
+				<file name="twitter-bootstrap/bootstrap.min.js" />
+				<file name="js/bootbox.min.js" />
+				<file name="js/jquery-ui.min.js" />
+				<file name="js/jquery.dirtyforms.js" />
+				<file name="js/jquery.raty.js" />
+				<file name="twitter-bootstrap/bootstrap-datepicker.js" />
+				<file name="twitter-bootstrap/bootstrap-tab.js" />
+				<file name="twitter-bootstrap/bootstrap-fileupload.js" />
+				<file name="twitter-bootstrap/bootstrap-timepicker.min.js" />
+			</filelist>
+    		</concat>
+
+    		<concat destfile="${build.compress.dir}/.css">
+			<filelist dir="web/r" >
+				<file name="twitter-bootstrap/bootstrap.min.css" />
+				<file name="css/jquery-ui.css" />
+				<file name="twitter-bootstrap/datepicker.css" />
+				<file name="twitter-bootstrap/jasny-bootstrap.min.css" />
+				<file name="twitter-bootstrap/bootstrap-timepicker.min.css" />
+				<file name="overrides.css" />
+			</filelist>
+    		</concat>
+	</target>
+
+	<target name="js.minify" depends="js.concatenate">
+		<apply executable="java" parallel="false">
+			<fileset dir="." includes="${build.compress.dir}/*.js"/>
+        		<arg line="-jar"/>
+        		<arg path="${lib.dir}/min/yuicompressor-2.4.2.jar"/>
+        		<srcfile/>
+        		<arg line="-o"/>
+        		<mapper type="glob" from="*.js" to="*min.js"/>
+        		<targetfile/>
+    		</apply>
+    		<apply executable="java" parallel="false">
+        		<fileset dir="." includes="${build.compress.dir}/*.css"/>
+        		<arg line="-jar"/>
+        		<arg path="${lib.dir}/min/yuicompressor-2.4.2.jar"/>
+        		<srcfile/>
+        		<arg line="-o"/>
+        		<mapper type="glob" from="*.css" to="*min.css"/>
+        		<targetfile/>
+    		</apply>          
+    		<!-- delete concatenated files, leave only minified -->
+		<delete file="${build.compress.dir}/.js" />
+		<delete file="${build.compress.dir}/.css" />
+	</target>
+</project>

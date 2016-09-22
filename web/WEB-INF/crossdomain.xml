@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+  <allow-access-from domain="https://*.force.[a-z]{3},https://*.salesforce.[a-z]{3}" />
+  <allow-http-request-headers-from domain="https://*.force.[a-z]{3},https://*.salesforce.[a-z]{3}" headers="*" />
+</cross-domain-policy>
