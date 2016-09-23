@@ -350,7 +350,7 @@ public class PersonController {
                     UActivities.USER_VERIFIED.getUActId());
             userActivitiesManager.addUserActivity(userActivities);
             
-            StringBuilder redirectUrl = new StringBuilder("/bootcamp/#/login");
+            StringBuilder redirectUrl = new StringBuilder("/speedsell/#/login");
             response.sendRedirect(redirectUrl.toString());
         } catch (Exception e) {
             // show any errors
@@ -395,7 +395,7 @@ public class PersonController {
                 throw new Exception("Unknown user");
             }	
 
-            StringBuilder redirectUrl = new StringBuilder("/bootcamp/#/resetPassword/" + code);//add link to view with RESET
+            StringBuilder redirectUrl = new StringBuilder("/speedsell/#/resetPassword/" + code);//add link to view with RESET
             response.sendRedirect(redirectUrl.toString());
         } catch (Exception e) {
             // show any errors

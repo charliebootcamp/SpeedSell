@@ -52,7 +52,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			 return true;
 		 }
 		
-		 StringBuilder redirectUrl = new StringBuilder("/bootcamp/errors/403");
+		 StringBuilder redirectUrl = new StringBuilder("/speedsell/errors/403");
 		 response.sendRedirect(redirectUrl.toString());
 		 LOGGER.info("Not allowed path: " + path);
 		 return false;

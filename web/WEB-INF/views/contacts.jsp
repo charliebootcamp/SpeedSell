@@ -8,7 +8,7 @@
           <p>Contact us and we'll get back to you within 24 hours.</p>
           <p><span class="glyphicon glyphicon-map-marker"></span> Lviv, Ukraine</p>
           <p><span class="glyphicon glyphicon-phone"></span> +38 066 12 34 567</p>
-          <p><span class="glyphicon glyphicon-envelope"></span> charlienoemail@edvantis.com</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> speedsellauction@gmail.com</p>
         </div>
       </div>
       <div class="col-sm-7">

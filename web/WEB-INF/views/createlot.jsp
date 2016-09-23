@@ -27,7 +27,7 @@
                       <label class="control-label col-sm-3" for="text">Description:</label>
                       <div class="col-sm-9">
                         <textarea tabindex="2" class="form-control" rows="5" id="lotdescription" maxlength="1024"
-                          ng-model="ACtrl.editLot.info" placeholder="{{ACtrl.placeholder.info}}"></textarea>
+                          ng-model="newLotCtrl.info"  placeholder="Enter lot description"></textarea>
                         </div>
                       </div>
                       <div class="form-group" >
@@ -66,7 +66,7 @@
                         <div class="col-sm-9">
                           <input class="form-control" type="text" maxlength="2"
                             name="lotduration" id="lotduration" ng-model="newLotCtrl.duration"
-                            class="form-control" placeholder="Enter lot duration" only-digits
+                            class="form-control" placeholder="Enter lot duration from 24 to 72" only-digits
                             ng-blur="newLotCtrl.duration = newLotCtrl.checkNum(newLotCtrl.duration, 24, 72)" tabindex="6"
                             required>
                           </div>
@@ -75,7 +75,7 @@
                           <label class="control-label col-sm-3" for="lotredemption">Buy now price($):</label>
                           <div class="col-sm-9">
                             <input tabindex="7" type="text" only-digits maxlength="12" name="lotredemption" id="lotredemption"
-                              ng-model="newLotCtrl.redemption" class="form-control" placeholder="Enter buy now">
+                              ng-model="newLotCtrl.redemption" class="form-control" placeholder="Enter price for buy now option.">
                             </div>
                           </div>
                           <div class="form-group">

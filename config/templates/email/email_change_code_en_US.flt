@@ -5,6 +5,6 @@
 <br />
 <br />
 Hello, your email was changed.
-To confirm your new email please click on this link: <a href="http://bootcamp-charli:8080/bootcamp/verification?code=${code}">Click here</a>
+To confirm your new email please click on this link: <a href="http://bootcamp-charli:8080/speedsell/verification?code=${code}">Click here</a>
 </body>
 </html>

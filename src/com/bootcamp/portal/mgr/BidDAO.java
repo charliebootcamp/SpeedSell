@@ -1,5 +1,6 @@
 package com.bootcamp.portal.mgr;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.hibernate.criterion.Restrictions;
@@ -45,10 +46,12 @@ public class BidDAO extends BaseManager {
 		if(bid.getAmount() == null){
 			throw new Exception("Your bid is wrong. Please enter another.");
 		}
-		
+
 		Bid b = new Bid(bid, entityById(Person.class, bid.getBidderId()));
 		Lot lot = entityById(Lot.class, bid.getLotId());
-		
+		if((lot.getStartDate().getTime()+lot.getDuration()) < Calendar.getInstance().getTime().getTime()){
+			throw new Exception("Auction finished.");
+		}
 		if(lot.getBestBid() != null && b.getBidDate().getTime() - lot.getBestBid().getBidDate().getTime() <= REACTION){
 			throw new Exception("Your reaction is less " + REACTION/1000 + " seconds. Please try again, if you are not a robot.");
 		}

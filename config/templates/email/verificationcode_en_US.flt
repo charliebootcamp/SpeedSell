@@ -4,7 +4,7 @@
 <body>
 <br />
 <br />
-To confirm your email please click on this link: <a href="http://bootcamp-charli:8080/bootcamp/verification?code=${code}">Click here</a>
+To confirm your email please click on this link: <a href="http://bootcamp-charli:8080/speedsell/verification?code=${code}">Click here</a>
 
 <br />
 Thank you for your registration.

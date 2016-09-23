@@ -78,6 +78,12 @@ app.controller("AccountController", function($scope, $route, $localStorage, $int
 					timerFunc();
 					for(i=0;i<ob.lots.length;i++){
 						ob.getBids(i);
+						if(ob.lots[i].state.id == 1 && ob.lots[i].paidCommission == false){
+							ob.sendInfo("To place your lot on auction you need to pay commission for placement. For this click on $ button on your lot.");
+						}
+						if(ob.lots[i].state.id == 0){
+							ob.sendInfo("You have canceled lot(s). Edit or delete them. Make sure you input all fields properly. If you have some problems with that, contact us.");
+						}
 					}
 				});
 			}
@@ -127,6 +133,7 @@ app.controller("AccountController", function($scope, $route, $localStorage, $int
 	ob.confirm = function(lotid){
 		accountService.confirmLot(lotid).then(function(d){
 			location.reload();
+		angular.element('#Alert').modal('hide');
 		});
 	}
 
@@ -141,6 +148,13 @@ app.controller("AccountController", function($scope, $route, $localStorage, $int
 		ob.message = message;
 		ob.alertType = "success";
 		ob.title = "Success!";
+		ob.showMessage = true;
+	}
+
+	ob.sendInfo = function(message) {
+		ob.message = message;
+		ob.alertType = "info";
+		ob.title = "Info!";
 		ob.showMessage = true;
 	}
 
@@ -227,11 +241,11 @@ app.controller("AccountController", function($scope, $route, $localStorage, $int
         	ob.sendError("Error in image saving. Please try later.");
         	});
 		} else edit('');
-	
+
 		function edit(path) {
 			if(!isEmpty(path)) ob.editLot.img = path;
 			lotService.editLot(ob.editLot).then(function successCallback(response){
-		
+
 			var uActivity = {
 				personId : $localStorage.curruser.id,
 				dateOf : new Date().getTime(),

@@ -47,8 +47,8 @@ public class LotDAO extends BaseManager {
 
 	private static int threads = 0;
 
-	private final long DELAY = 10000;
-	private final long PERIOD = 20000;
+	private final long DELAY = 5000;
+	private final long PERIOD = 10000;
 
 	private class WorkerTimer extends TimerTask {
 

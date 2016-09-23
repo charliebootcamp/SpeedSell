@@ -70,7 +70,7 @@ app.controller('IndexController', function($scope, $route, uActivitiesService, p
 
 		ic.sendFeedback = function(){
 			if($localStorage.curruser != null){
-				$localStorage.recEmail = "mykola.dverii@edvantis.com";
+				$localStorage.recEmail = "speedsellauction@gmail.com";
 				$localStorage.title = "Feedback from user";
 				if($route.current.loadedTemplateUrl != "question/"){
 					location.href = '#/question';

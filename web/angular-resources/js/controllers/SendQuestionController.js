@@ -4,7 +4,7 @@ app.controller('SendQuestionController',
 			sq.title = $localStorage.title || "Question";
 			sq.message;
 			sq.recEmail = $localStorage.recEmail;
-			sq.SSemail = "mykola.dverii@edvantis.com";
+			sq.SSemail = "speedsellauction@gmail.com";
 			sq.alertMessage;
 			sq.alertTitle;
 			sq.showM = false;

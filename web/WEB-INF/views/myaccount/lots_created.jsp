@@ -31,6 +31,10 @@
                 <div ng-if="ACtrl.lots.length == 0">
                   <h2>No created lots</h2>
                 </div>
+                <div class="alert alert-{{ACtrl.alertType}}" ng-show="ACtrl.showMessage">
+                  <a href="" class="close" ng-click="ACtrl.showMessage = false">&times;</a>
+                  <strong>{{ACtrl.title}}</strong> {{ACtrl.message}}
+                </div>
                 <div class="row">
                   <div class="col-sm-4" ng-repeat="lot in ACtrl.lots">
                     <div class="card">

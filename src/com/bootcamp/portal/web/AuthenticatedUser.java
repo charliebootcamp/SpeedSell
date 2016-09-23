@@ -3,7 +3,6 @@ package com.bootcamp.portal.web;
 import java.io.Serializable;
 import java.util.Date;
 
-
 import com.bootcamp.portal.domain.Person;
 
 
@@ -12,6 +11,7 @@ public class AuthenticatedUser implements Serializable {
 
 	private Long id;
 	private String email;
+	private String name;
 	private Date createDate;	 
 	private Date updateDate; 	 
 	private Date lastLogin;
@@ -21,6 +21,7 @@ public class AuthenticatedUser implements Serializable {
 	}
 
 	public AuthenticatedUser(Person user) {
+		this.setName(user.getName());
 		this.setId(user.getId());
 		this.setEmail(user.getEmail());
 		this.setCreateDate(user.getCreateDate());
@@ -28,6 +29,14 @@ public class AuthenticatedUser implements Serializable {
 		this.setTypeId(user.getTypeId());
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public Long getId() {
 		return id;
 	}

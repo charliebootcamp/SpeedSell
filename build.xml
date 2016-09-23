@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="bootcamp" default="dist" basedir=".">
 
-<!--
+<!-- 
 # run tests:
 ant test
 
@@ -10,8 +10,8 @@ ant clean dist
 
 -->
 	<property name="basepackage" value="com.bootcamp.portal" />
-	<property name="jar" value="webapp-runner.jar" />
-	<property name="war" value="webapp-runner.war" />
+	<property name="jar" value="speedsell.jar" />
+	<property name="war" value="speedsell.war" />
 
 	<property name="lib.dir" value="lib" />
 	<property name="src.dir" value="src" />
@@ -94,7 +94,7 @@ ant clean dist
 			<!--<fileset dir="${resource.dir}" includes="**/*.xml,**/*.properties,**/*.vm" />-->
 			<!--<fileset dir="${sql.dir}" includes="**/*.sql" />-->
 		</copy>
-
+		
 		<javac srcdir="${test.dir}" destdir="${build.testclasses.dir}" classpathref="afterbuildpath" debug="true" />
 		<copy todir="${build.testclasses.dir}">
 			<fileset dir="${test.dir}" includes="**/*.xml,**/*.properties" />
@@ -119,17 +119,17 @@ ant clean dist
 				<attribute name="Main-Class" value="${main-class}" />
 			</manifest>
 		</jar>
-
+		
 		<war destfile="${build.dir}/${war}" basedir="web">
 			<lib dir="lib" includes="*.jar"/>
-
+                         
 <!--			<exclude name="r/css" />
 			<exclude name="r/twitter-bootstrap/*" />
 			<exclude name="r/js/*.js" />
 			<exclude name="r/*.js" />
 			<exclude name="r/*.css" />
 			<exclude name="r/css/*.css" />
--->
+-->			
 			<classes dir="${build.classes.dir}" />
 <!--			<zipfileset dir="${build.compress.dir}" prefix="r"/>-->
 		</war>
@@ -140,7 +140,7 @@ ant clean dist
 			<param name="do-test.classpath" value="test.classpath.noinstrument" />
 		</antcall>
 	</target>
-
+	
 	<target name="instrument" depends="compile">
 		<cobertura-instrument todir="${build.instrumented.dir}" datafile="${build.instrumented.datafile}">
 			<fileset dir="${build.classes.dir}">
@@ -149,7 +149,7 @@ ant clean dist
 			</fileset>
 		</cobertura-instrument>
 	</target>
-
+	
 	<target name="copy-test-files">
 		<copy todir="${build.testclasses.dir}/${test.files.dir}">
 			<fileset dir="${test.dir}" includes="**/*.xlsx" />
@@ -157,21 +157,21 @@ ant clean dist
 			<fileset dir="${test.dir}" includes="**/*.pdf" />
 		</copy>
 	</target>
-
+	
 	<target name="do-test" depends="copy-test-files">
 		<junit printsummary="yes" haltonfailure="no" fork="true">
 			<!-- http://www.javacraft.org/2012/07/cobertura-with-jdk7.html -->
 			<jvmarg value="-XX:-UseSplitVerifier" />
-
+		
 			<!-- next property will be ignored if no cobertura classes in classpath -->
 			<sysproperty key="net.sourceforge.cobertura.datafile" file="${build.instrumented.datafile}" />
-
+			
 			<!-- property for required native library in testing -->
 			<sysproperty key="java.library.path" value="${lib.dir}/pdf" />
-
+			
 			<!-- classpath either include cobertura and instrumented classes or not -->
 			<classpath refid="${do-test.classpath}" />
-
+			
 			<formatter type="xml" />
 			<batchtest fork="yes" todir="${build.testresults}">
 				<fileset dir="${test.dir}" id="id">
@@ -239,7 +239,7 @@ ant clean dist
         		<arg line="-o"/>
         		<mapper type="glob" from="*.css" to="*min.css"/>
         		<targetfile/>
-    		</apply>
+    		</apply>          
     		<!-- delete concatenated files, leave only minified -->
 		<delete file="${build.compress.dir}/.js" />
 		<delete file="${build.compress.dir}/.css" />

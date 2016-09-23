@@ -65,11 +65,11 @@
 					<div class="col-xs-6">
                       <a title="Contact with buyer." href=""
                         ng-click="ACtrl.sendQuestion(lot.bestBid.bidder.email, lot.name)">
-                        <span class="glyphicon glyphicon-question-sign footer-glyph footer-but-inside"></span>
+                        <span class="glyphicon glyphicon-envelope footer-glyph footer-but-inside"></span>
                       </a>
 					</div>
 					<div class="col-xs-6">
-                      <a title="Confirm payment." href="" ng-click="ACtrl.confirm(lot.id)">
+                      <a title="Confirm payment." href=""  data-toggle="modal" data-target="#Alert" ng-click="ACtrl.cur = lot.id">
                         <span class="glyphicon glyphicon-ok-circle footer-glyph footer-but-inside"></span>
                       </a>
 					</div>
@@ -81,6 +81,27 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Alert" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <h4>Are you sure you want to confirm payment for this lot?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success"	ng-click="ACtrl.confirm(ACtrl.cur)">
+            Yes
+          </button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            No
+          </button>
         </div>
       </div>
     </div>

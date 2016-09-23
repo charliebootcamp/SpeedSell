@@ -214,7 +214,8 @@ function($scope, $route, personService, $localStorage, uActivitiesService){
 					email : p.email,
 					passwordHash : p.pass,
 					phone : p.phone,
-					fullName: p.fullname,
+					homeAddress : p.address,
+					fullName: p.fullname
 				};
 				personService.insertPerson(per).then(function(response){
 					p.success = true;
